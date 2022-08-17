@@ -30,7 +30,7 @@ public:
 protected:
     int salary{0};
     std::string position;
-    std::vector<Employee>
+    //std::vector<Employee>
 };
 
 
