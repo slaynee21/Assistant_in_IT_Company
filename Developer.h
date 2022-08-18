@@ -7,8 +7,8 @@
 
 class Developer: public Employee{
 public:
-    explicit Developer(std::string aPosition, int aSalary=2000)
-        : Employee(std::move(aPosition),aSalary)
+    Developer(std::string aName,std::string aPosition, int aSalary=2000)
+        : Employee(std::move(aName),std::move(aPosition),aSalary)
     {
     }
 private:

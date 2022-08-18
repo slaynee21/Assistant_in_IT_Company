@@ -7,9 +7,11 @@
 
 class Employee {
 public:
-    explicit Employee(std::string aPosition, int aSalary)
-        : position(std::move(aPosition)), salary(aSalary){
+    Employee(std::string aName, std::string aPosition, int aSalary)
+        : name(std::move(aName)),position(std::move(aPosition)), salary(aSalary){
     }
+
+   Employee()= default;;
 
     int getSalary() const{
         return salary;
@@ -23,6 +25,10 @@ public:
         return position;
     }
 
+    std::string getName(){
+        return name;
+    }
+
     void setPosition(std::string newPosition){
         position=std::move(newPosition);
     }
@@ -30,7 +36,7 @@ public:
 protected:
     int salary{0};
     std::string position;
-    //std::vector<Employee>
+    std::string name;
 };
 
 

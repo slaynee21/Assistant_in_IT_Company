@@ -5,8 +5,8 @@
 
 class Manager: public Employee{
 public:
-    explicit Manager(std::string aPosition, int aSalary=2000)
-    : Employee(std::move(aPosition),aSalary)
+    Manager(std::string aName,std::string aPosition, int aSalary=2000)
+    : Employee(std::move(aName),std::move(aPosition),aSalary)
     {
     }
 };
