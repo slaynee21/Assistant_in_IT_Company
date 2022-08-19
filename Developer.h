@@ -11,6 +11,14 @@ public:
         : Employee(std::move(aName),std::move(aPosition),aSalary)
     {
     }
+
+    std::string get_project(){
+        return project;
+    }
+
+    void set_project(std::string projectName){
+        project=projectName;
+    }
 private:
     std::string project;
 };

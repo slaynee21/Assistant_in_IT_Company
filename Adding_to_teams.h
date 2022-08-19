@@ -45,8 +45,19 @@ public:
     }
 
 
-    void add_project_to_list(std::string projectName, std::string developerName){
-        project_list[projectName]=vector_of_developers[find_position(developerName)];
+    void add_project_to_list(std::string projectName){
+        auto search = project_list.find(projectName);
+        if (search != project_list.end()) {
+            std::cout<<"Project is already on the list\n";
+        } else {
+            std::vector <Employee> temp;
+            project_list[projectName]=temp;
+        }
+    }
+
+    void add_developer_to_project(std::string projectName, std::string developerName){
+        project_list[projectName].push_back(vector_of_developers[find_position(developerName)]);
+        vector_of_developers[find_position(developerName)].set_project(projectName);
     }
 
 
@@ -69,7 +80,7 @@ private:
     std::vector<Developer> vector_of_developers;
     std::vector<Manager> vector_of_managers;
     std::vector<Chief> vector_of_chiefs;
-    std::unordered_map<std::string , Employee> project_list;
+    std::unordered_map<std::string , std::vector<Employee>> project_list;
 };
 
 
